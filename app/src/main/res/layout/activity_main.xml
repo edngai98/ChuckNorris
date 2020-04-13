@@ -6,42 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/quote"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="151dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="151dp"
-        android:text="Hello World!"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_chuck" />
-
     <Button
         android:id="@+id/quote_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="154dp"
+        android:layout_marginTop="22dp"
         android:layout_marginEnd="153dp"
-        android:layout_marginBottom="19dp"
         android:text="New Quote"
-        app:layout_constraintBottom_toTopOf="@+id/editTv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
 
     <Button
         android:id="@+id/save_quote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="23dp"
         android:text="Save Quote"
-        app:layout_constraintBaseline_toBaselineOf="@+id/favourite_quotes_button"
-        app:layout_constraintEnd_toStartOf="@+id/favourite_quotes_button"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
     <RatingBar
         android:id="@+id/ratingBar"
@@ -49,8 +34,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="86dp"
         android:layout_marginEnd="85dp"
-        android:layout_marginBottom="23dp"
-        app:layout_constraintBottom_toTopOf="@+id/favourite_quotes_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -59,11 +42,9 @@
         android:id="@+id/image_chuck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="172dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="167dp"
-        android:layout_marginBottom="240dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTv"
+        android:layout_marginStart="169dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="170dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -73,36 +54,50 @@
         android:id="@+id/favourite_quotes_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="47dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="85dp"
         android:text="Favourites"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/save_quote"
         app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
     <EditText
         android:id="@+id/editTv"
-        android:layout_width="239dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="86dp"
-        android:layout_marginEnd="86dp"
-        android:layout_marginBottom="15dp"
+        android:layout_width="242dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="84dp"
         android:hint="Save Quote As"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_chuck" />
+        app:layout_constraintTop_toBottomOf="@+id/quote_button" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="86dp"
-        android:layout_marginEnd="205dp"
+        android:layout_marginTop="14dp"
         android:text="Set your rating here:"
-        app:layout_constraintBottom_toTopOf="@+id/ratingBar"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTv" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="264dp"
+        android:layout_height="154dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="75dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_chuck">
+
+        <TextView
+            android:id="@+id/quote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Press the button below to generate a quote!"
+            android:textAlignment="center"
+            android:textSize="20dp" />
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
