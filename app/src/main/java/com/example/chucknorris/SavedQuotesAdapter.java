@@ -13,10 +13,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SavedQuotesAdapter extends FirestoreRecyclerAdapter<SavedQuotes, SavedQuotesAdapter.QuotesHolder> {
 
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private CollectionReference quoteDatabase = db.collection("Quotes");
     private OnItemClickListener listener;
 
 
@@ -39,6 +47,8 @@ public class SavedQuotesAdapter extends FirestoreRecyclerAdapter<SavedQuotes, Sa
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.quotes_card_rows, parent, false);
         return new QuotesHolder(v);
     }
+
+
 
 
     public class QuotesHolder extends RecyclerView.ViewHolder {
@@ -73,4 +83,7 @@ public class SavedQuotesAdapter extends FirestoreRecyclerAdapter<SavedQuotes, Sa
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
     }
+
+
+
 }
